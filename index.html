@@ -359,7 +359,279 @@
             border-color: var(--primary);
             box-shadow: 0 8px 20px rgba(229, 114, 0, 0.3);
         }
-        
+
+        /* Smart Room Search Styles */
+        .room-search-section {
+            background: var(--white);
+            border-bottom: 1px solid var(--gray-200);
+        }
+
+        .search-toggle-btn {
+            width: 100%;
+            padding: 1rem 2rem;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            border: none;
+            color: white;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+            transition: all var(--transition-normal);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .search-toggle-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, transparent 50%);
+            transition: opacity var(--transition-normal);
+            opacity: 0;
+        }
+
+        .search-toggle-btn:hover::before {
+            opacity: 1;
+        }
+
+        .search-toggle-btn:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 8px 25px rgba(229, 114, 0, 0.3);
+        }
+
+        .search-toggle-btn .chevron {
+            transition: transform var(--transition-normal);
+        }
+
+        .search-toggle-btn.expanded .chevron {
+            transform: rotate(180deg);
+        }
+
+        .search-panel {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+            background: var(--gray-50);
+        }
+
+        .search-panel.expanded {
+            max-height: 500px;
+            padding: 2rem;
+        }
+
+        .search-form {
+            background: var(--white);
+            border-radius: var(--radius-xl);
+            padding: 1.5rem;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--gray-200);
+        }
+
+        .search-row {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .search-row:last-child {
+            margin-bottom: 0;
+        }
+
+        .search-field {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            min-width: 150px;
+            flex: 1;
+        }
+
+        .search-field label {
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: var(--gray-700);
+        }
+
+        .search-field input {
+            padding: 0.75rem;
+            border: 1px solid var(--gray-300);
+            border-radius: var(--radius-md);
+            font-size: 0.875rem;
+            transition: all var(--transition-normal);
+        }
+
+        .search-field input:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(229, 114, 0, 0.1);
+        }
+
+        .equipment-field {
+            flex: 2;
+        }
+
+        .equipment-checkboxes {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .checkbox-label {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.875rem;
+            color: var(--gray-700);
+            cursor: pointer;
+            transition: color var(--transition-fast);
+        }
+
+        .checkbox-label:hover {
+            color: var(--primary);
+        }
+
+        .checkbox-label input[type="checkbox"] {
+            width: 16px;
+            height: 16px;
+            accent-color: var(--primary);
+        }
+
+        .search-actions {
+            display: flex;
+            gap: 1rem;
+            justify-content: flex-end;
+            margin-top: 1.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid var(--gray-200);
+        }
+
+        .search-btn {
+            padding: 0.75rem 1.5rem;
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: var(--radius-lg);
+            font-size: 0.875rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all var(--transition-normal);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .search-btn:hover {
+            background: var(--primary-dark);
+            transform: translateY(-1px);
+            box-shadow: 0 6px 20px rgba(229, 114, 0, 0.3);
+        }
+
+        .clear-btn {
+            padding: 0.75rem 1.5rem;
+            background: var(--white);
+            color: var(--gray-700);
+            border: 1px solid var(--gray-300);
+            border-radius: var(--radius-lg);
+            font-size: 0.875rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all var(--transition-normal);
+        }
+
+        .clear-btn:hover {
+            background: var(--gray-50);
+            border-color: var(--gray-400);
+        }
+
+        .search-results {
+            margin-top: 1.5rem;
+        }
+
+        .search-result-item {
+            background: var(--white);
+            border: 1px solid var(--gray-200);
+            border-radius: var(--radius-lg);
+            padding: 1.25rem;
+            margin-bottom: 1rem;
+            transition: all var(--transition-normal);
+            cursor: pointer;
+        }
+
+        .search-result-item:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+            border-color: var(--primary);
+        }
+
+        .search-result-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 0.75rem;
+        }
+
+        .search-result-title {
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: var(--gray-900);
+            margin-bottom: 0.25rem;
+        }
+
+        .search-result-building {
+            font-size: 0.875rem;
+            color: var(--gray-600);
+        }
+
+        .search-result-capacity {
+            background: var(--success-light);
+            color: var(--success);
+            padding: 0.25rem 0.75rem;
+            border-radius: var(--radius-md);
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+
+        .search-result-details {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-bottom: 0.75rem;
+        }
+
+        .search-result-equipment {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .equipment-tag {
+            background: var(--gray-100);
+            color: var(--gray-700);
+            padding: 0.25rem 0.5rem;
+            border-radius: var(--radius-sm);
+            font-size: 0.75rem;
+            font-weight: 500;
+        }
+
+        .search-result-description {
+            color: var(--gray-600);
+            font-size: 0.875rem;
+            line-height: 1.5;
+        }
+
+        .no-results {
+            text-align: center;
+            padding: 2rem;
+            color: var(--gray-500);
+            font-style: italic;
+        }
+
         .dashboard {
             display: flex;
             gap: 2rem;
@@ -1723,7 +1995,82 @@
                 </div>
             </div>
         </div>
-        
+
+        <!-- Smart Room Search -->
+        <div class="room-search-section">
+            <button class="search-toggle-btn" id="searchToggleBtn">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="11" cy="11" r="8"/>
+                    <path d="M21 21l-4.35-4.35"/>
+                </svg>
+                Find Available Room
+                <svg class="chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M6 9l6 6 6-6"/>
+                </svg>
+            </button>
+
+            <div class="search-panel" id="searchPanel">
+                <div class="search-form">
+                    <div class="search-row">
+                        <div class="search-field">
+                            <label for="searchDate">Date:</label>
+                            <input type="date" id="searchDate">
+                        </div>
+                        <div class="search-field">
+                            <label for="searchStartTime">Start Time:</label>
+                            <input type="time" id="searchStartTime" value="09:00">
+                        </div>
+                        <div class="search-field">
+                            <label for="searchEndTime">End Time:</label>
+                            <input type="time" id="searchEndTime" value="10:00">
+                        </div>
+                        <div class="search-field">
+                            <label for="searchCapacity">Min Capacity:</label>
+                            <input type="number" id="searchCapacity" min="1" max="150" placeholder="Any">
+                        </div>
+                    </div>
+
+                    <div class="search-row">
+                        <div class="search-field equipment-field">
+                            <label>Required Equipment:</label>
+                            <div class="equipment-checkboxes">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" value="projector"> Projector
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" value="whiteboard"> Whiteboard
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" value="av_system"> AV System
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" value="conference_phone"> Conference Phone
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" value="microphone"> Microphone
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="search-actions">
+                        <button class="search-btn" id="searchBtn">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="11" cy="11" r="8"/>
+                                <path d="M21 21l-4.35-4.35"/>
+                            </svg>
+                            Search Available Rooms
+                        </button>
+                        <button class="clear-btn" id="clearSearchBtn">Clear</button>
+                    </div>
+                </div>
+
+                <div class="search-results" id="searchResults">
+                    <!-- Results will be populated here -->
+                </div>
+            </div>
+        </div>
+
         <div class="dashboard">
             <div class="overview-sidebar">
                 <div class="sidebar-header">
@@ -4201,12 +4548,300 @@
                 this.availableRoomsResults.classList.remove('hidden');
             }
         }
-        
+
+        // Smart Room Search Functionality
+        class RoomSearchManager {
+            constructor() {
+                this.searchToggleBtn = document.getElementById('searchToggleBtn');
+                this.searchPanel = document.getElementById('searchPanel');
+                this.searchBtn = document.getElementById('searchBtn');
+                this.clearBtn = document.getElementById('clearSearchBtn');
+                this.searchResults = document.getElementById('searchResults');
+
+                this.initializeSearch();
+            }
+
+            initializeSearch() {
+                // Set default date to today
+                const today = new Date();
+                document.getElementById('searchDate').value = today.toISOString().split('T')[0];
+
+                // Toggle panel
+                this.searchToggleBtn.addEventListener('click', () => {
+                    this.toggleSearchPanel();
+                });
+
+                // Search functionality
+                this.searchBtn.addEventListener('click', () => {
+                    this.performSearch();
+                });
+
+                // Clear functionality
+                this.clearBtn.addEventListener('click', () => {
+                    this.clearSearch();
+                });
+
+                // Auto-search on form changes
+                const formInputs = this.searchPanel.querySelectorAll('input');
+                formInputs.forEach(input => {
+                    input.addEventListener('change', () => {
+                        if (this.hasSearchCriteria()) {
+                            this.performSearch();
+                        }
+                    });
+                });
+            }
+
+            toggleSearchPanel() {
+                const isExpanded = this.searchPanel.classList.contains('expanded');
+
+                if (isExpanded) {
+                    this.searchPanel.classList.remove('expanded');
+                    this.searchToggleBtn.classList.remove('expanded');
+                } else {
+                    this.searchPanel.classList.add('expanded');
+                    this.searchToggleBtn.classList.add('expanded');
+                }
+            }
+
+            hasSearchCriteria() {
+                const date = document.getElementById('searchDate').value;
+                const startTime = document.getElementById('searchStartTime').value;
+                const endTime = document.getElementById('searchEndTime').value;
+
+                return date && startTime && endTime;
+            }
+
+            async performSearch() {
+                if (!this.hasSearchCriteria()) {
+                    this.showMessage('Please select date, start time, and end time to search.');
+                    return;
+                }
+
+                const searchCriteria = this.getSearchCriteria();
+                this.showLoading();
+
+                try {
+                    const availableRooms = await this.findAvailableRooms(searchCriteria);
+                    this.displayResults(availableRooms, searchCriteria);
+                } catch (error) {
+                    console.error('Search error:', error);
+                    this.showMessage('Error performing search. Please try again.');
+                }
+            }
+
+            getSearchCriteria() {
+                return {
+                    date: document.getElementById('searchDate').value,
+                    startTime: document.getElementById('searchStartTime').value,
+                    endTime: document.getElementById('searchEndTime').value,
+                    capacity: parseInt(document.getElementById('searchCapacity').value) || 0,
+                    equipment: Array.from(document.querySelectorAll('.equipment-checkboxes input:checked')).map(cb => cb.value)
+                };
+            }
+
+            async findAvailableRooms(criteria) {
+                const allRooms = this.getAllRooms();
+                const availableRooms = [];
+
+                for (const room of allRooms) {
+                    if (this.meetsCriteria(room, criteria)) {
+                        const isAvailable = await this.isRoomAvailable(room, criteria);
+                        if (isAvailable) {
+                            availableRooms.push(room);
+                        }
+                    }
+                }
+
+                return availableRooms;
+            }
+
+            getAllRooms() {
+                const rooms = [];
+                if (window.DashboardConfig && window.DashboardConfig.buildings) {
+                    window.DashboardConfig.buildings.forEach(building => {
+                        building.rooms.forEach(room => {
+                            rooms.push({
+                                ...room,
+                                building: building.name,
+                                buildingId: building.id
+                            });
+                        });
+                    });
+                }
+                return rooms;
+            }
+
+            meetsCriteria(room, criteria) {
+                // Check capacity
+                if (criteria.capacity > 0 && room.capacity < criteria.capacity) {
+                    return false;
+                }
+
+                // Check equipment
+                if (criteria.equipment.length > 0) {
+                    const roomEquipment = room.equipment || [];
+                    const hasAllEquipment = criteria.equipment.every(reqEquip =>
+                        roomEquipment.includes(reqEquip)
+                    );
+                    if (!hasAllEquipment) {
+                        return false;
+                    }
+                }
+
+                return true;
+            }
+
+            async isRoomAvailable(room, criteria) {
+                try {
+                    // Get calendar data for the room
+                    const events = await this.getRoomEvents(room, criteria.date);
+
+                    // Check if time slot conflicts with any events
+                    const searchStart = this.combineDateAndTime(criteria.date, criteria.startTime);
+                    const searchEnd = this.combineDateAndTime(criteria.date, criteria.endTime);
+
+                    for (const event of events) {
+                        const eventStart = new Date(event.start);
+                        const eventEnd = new Date(event.end);
+
+                        // Check for overlap
+                        if (searchStart < eventEnd && searchEnd > eventStart) {
+                            return false; // Room is busy during this time
+                        }
+                    }
+
+                    return true; // Room is available
+                } catch (error) {
+                    console.error('Error checking room availability:', room.name, error);
+                    return false; // Assume unavailable if we can't check
+                }
+            }
+
+            async getRoomEvents(room, date) {
+                // Use the existing dashboard calendar loading logic
+                if (window.dashboard && window.dashboard.roomData) {
+                    const roomData = window.dashboard.roomData.find(r => r.id === room.id);
+                    if (roomData && roomData.events) {
+                        // Filter events for the specific date
+                        const targetDate = new Date(date);
+                        return roomData.events.filter(event => {
+                            const eventDate = new Date(event.start);
+                            return eventDate.toDateString() === targetDate.toDateString();
+                        });
+                    }
+                }
+                return [];
+            }
+
+            combineDateAndTime(date, time) {
+                return new Date(`${date}T${time}`);
+            }
+
+            displayResults(rooms, criteria) {
+                if (rooms.length === 0) {
+                    this.showMessage(`No available rooms found for ${criteria.date} from ${criteria.startTime} to ${criteria.endTime}.`);
+                    return;
+                }
+
+                const resultsHtml = rooms.map(room => this.createResultCard(room, criteria)).join('');
+                this.searchResults.innerHTML = `
+                    <h4 style="margin-bottom: 1rem; color: var(--gray-700);">
+                        Found ${rooms.length} available room${rooms.length !== 1 ? 's' : ''}
+                        for ${criteria.date} from ${criteria.startTime} to ${criteria.endTime}
+                    </h4>
+                    ${resultsHtml}
+                `;
+            }
+
+            createResultCard(room, criteria) {
+                const equipmentTags = (room.equipment || []).map(eq =>
+                    `<span class="equipment-tag">${eq.replace('_', ' ')}</span>`
+                ).join('');
+
+                return `
+                    <div class="search-result-item" onclick="window.searchManager.selectRoom('${room.id}')">
+                        <div class="search-result-header">
+                            <div>
+                                <div class="search-result-title">${room.name}</div>
+                                <div class="search-result-building">${room.building}</div>
+                            </div>
+                            <div class="search-result-capacity">Capacity: ${room.capacity || 'N/A'}</div>
+                        </div>
+                        <div class="search-result-details">
+                            <div class="search-result-equipment">
+                                ${equipmentTags}
+                            </div>
+                        </div>
+                        ${room.description ? `<div class="search-result-description">${room.description}</div>` : ''}
+                        <div style="margin-top: 0.75rem; padding-top: 0.75rem; border-top: 1px solid var(--gray-200); font-size: 0.875rem; color: var(--primary); font-weight: 600;">
+                            Click to view in calendar → Book in Outlook
+                        </div>
+                    </div>
+                `;
+            }
+
+            selectRoom(roomId) {
+                // Focus on the selected room in the main dashboard
+                if (window.dashboard) {
+                    const roomFilter = document.getElementById('roomFilter');
+                    if (roomFilter) {
+                        roomFilter.value = roomId;
+                        roomFilter.dispatchEvent(new Event('change'));
+                    }
+                }
+
+                // Close search panel
+                this.searchPanel.classList.remove('expanded');
+                this.searchToggleBtn.classList.remove('expanded');
+
+                // Scroll to dashboard
+                document.querySelector('.dashboard').scrollIntoView({ behavior: 'smooth' });
+            }
+
+            showLoading() {
+                this.searchResults.innerHTML = `
+                    <div style="text-align: center; padding: 2rem; color: var(--gray-500);">
+                        <div style="margin-bottom: 1rem;">🔍</div>
+                        Searching available rooms...
+                    </div>
+                `;
+            }
+
+            showMessage(message) {
+                this.searchResults.innerHTML = `
+                    <div class="no-results">
+                        ${message}
+                    </div>
+                `;
+            }
+
+            clearSearch() {
+                // Reset form
+                document.getElementById('searchDate').value = new Date().toISOString().split('T')[0];
+                document.getElementById('searchStartTime').value = '09:00';
+                document.getElementById('searchEndTime').value = '10:00';
+                document.getElementById('searchCapacity').value = '';
+
+                // Uncheck all equipment
+                document.querySelectorAll('.equipment-checkboxes input').forEach(cb => {
+                    cb.checked = false;
+                });
+
+                // Clear results
+                this.searchResults.innerHTML = '';
+            }
+        }
+
         // Initialize dashboard with error handling
         document.addEventListener('DOMContentLoaded', () => {
             try {
                 console.log('Initializing Room Dashboard...');
                 window.dashboard = new RoomDashboard();
+
+                // Initialize search manager
+                console.log('Initializing Room Search...');
+                window.searchManager = new RoomSearchManager();
             } catch (error) {
                 console.error('Failed to initialize dashboard:', error);
                 document.body.innerHTML = `
