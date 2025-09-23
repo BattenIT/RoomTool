@@ -1,7 +1,7 @@
-// Configuration for BattenSpace - Direct URL Version (Legacy Support)
+// Configuration for BattenSpace - Azure Deployment Version
 window.DashboardConfig = {
-    // Azure Function endpoint for cached calendar data (disabled for direct URL mode)
-    // azureFunctionUrl: "https://roomtool-calendar-function.azurewebsites.net/api/getcalendar",
+    // Azure Function endpoint for cached calendar data
+    azureFunctionUrl: "https://roomtool-calendar-function.azurewebsites.net/api/getcalendar",
 
     // Room organization by building/location
     // Each building can have multiple rooms with their ICS files
@@ -13,7 +13,7 @@ window.DashboardConfig = {
                 {
                     name: "Conference Room A L014",
                     id: "confa",
-                    icsFile: "https://outlook.office365.com/owa/calendar/4207f27aa0d54d318d660537325a3856@virginia.edu/64228c013c3c425ca3ec6682642a970e8523251041637520167/calendar.ics",
+                    icsFile: "confa",  // Azure Function room ID
                     capacity: 12,
                     equipment: ["projector", "whiteboard", "av_system", "conference_phone"],
                     description: "Professional meeting room with full AV capabilities"
@@ -21,7 +21,7 @@ window.DashboardConfig = {
                 {
                     name: "Great Hall 100",
                     id: "greathall",
-                    icsFile: "https://outlook.office365.com/owa/calendar/cf706332e50c45009e2b3164e0b68ca0@virginia.edu/6960c19164584f9cbb619329600a490a16019380931273154626/calendar.ics",
+                    icsFile: "greathall",  // Azure Function room ID
                     capacity: 120,
                     equipment: ["projector", "podium", "microphone", "av_system", "stage"],
                     description: "Large presentation hall for lectures and events"
@@ -29,7 +29,7 @@ window.DashboardConfig = {
                 {
                     name: "Seminar Room L039",
                     id: "seminar",
-                    icsFile: "https://outlook.office365.com/owa/calendar/4cedc3f0284648fcbee80dd7f6563bab@virginia.edu/211f4d478ee94feb8fe74fa4ed82a0b22636302730039956374/calendar.ics",
+                    icsFile: "seminar",  // Azure Function room ID
                     capacity: 20,
                     equipment: ["whiteboard", "tv_display", "ethernet"],
                     description: "Intimate classroom setting for small group discussions"
@@ -37,7 +37,7 @@ window.DashboardConfig = {
                 {
                     name: "Student Lounge 206",
                     id: "studentlounge206",
-                    icsFile: "https://outlook.office365.com/owa/calendar/bfd63ea7933c4c3d965a632e5d6b703d@virginia.edu/05f41146b7274347a5e374b91f0e7eda6953039659626971784/calendar.ics",
+                    icsFile: "studentlounge206",  // Azure Function room ID - NEWLY ADDED
                     capacity: 30,
                     equipment: ["furniture", "wifi", "informal_seating", "kitchen_access"],
                     description: "Casual meeting and social space with flexible seating"
@@ -51,7 +51,7 @@ window.DashboardConfig = {
                 {
                     name: "Pavilion X Upper Garden",
                     id: "pavx-upper",
-                    icsFile: "https://outlook.office365.com/owa/calendar/52b9b2d41868473fac5d3e9963512a9b@virginia.edu/311e34fd14384759b006ccf185c1db677813060047149602177/calendar.ics",
+                    icsFile: "pavx-upper",  // Azure Function room ID
                     capacity: 40,
                     equipment: ["outdoor_space", "wifi", "garden_setting", "weather_dependent"],
                     description: "Covered outdoor event space with garden atmosphere"
@@ -59,7 +59,7 @@ window.DashboardConfig = {
                 {
                     name: "Pavilion X Basement Room 1",
                     id: "pavx-b1",
-                    icsFile: "https://outlook.office365.com/owa/calendar/fa3ecb9b47824ac0a36733c7212ccc97@virginia.edu/d23afabf93da4fa4b49d2be3ce290f7911116129854936607531/calendar.ics",
+                    icsFile: "pavx-b1",  // Azure Function room ID
                     capacity: 15,
                     equipment: ["whiteboard", "ethernet", "basic_furniture"],
                     description: "Multi-purpose basement meeting room"
@@ -67,7 +67,7 @@ window.DashboardConfig = {
                 {
                     name: "Pavilion X Basement Room 2",
                     id: "pavx-b2",
-                    icsFile: "https://outlook.office365.com/owa/calendar/3f60cb3359dd40f7943b9de3b062b18d@virginia.edu/1e78265cf5eb44da903745ca3d872e6910017444746788834359/calendar.ics",
+                    icsFile: "pavx-b2",  // Azure Function room ID
                     capacity: 15,
                     equipment: ["whiteboard", "ethernet", "basic_furniture"],
                     description: "Multi-purpose basement meeting room"
@@ -75,7 +75,7 @@ window.DashboardConfig = {
                 {
                     name: "Pavilion X Basement Exhibit",
                     id: "pavx-exhibit",
-                    icsFile: "https://outlook.office365.com/owa/calendar/4df4134c83844cef9d9357180ccfb48c@virginia.edu/e46a84ae5d8842d4b33a842ddc5ff66c11207228220277930183/calendar.ics",
+                    icsFile: "pavx-exhibit",  // Azure Function room ID
                     capacity: 25,
                     equipment: ["display_space", "presentation_area", "wifi"],
                     description: "Display and presentation space for exhibits"
